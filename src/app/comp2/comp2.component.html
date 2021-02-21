@@ -1,6 +1,5 @@
-<div class="p-2">
-  Component 2<br><br>
-  <span>
-    Compteur : {{ counter }}
-  </span>
+<div class="p-2 main d-flex flex-column justify-content-between align-items-center">
+  <div> Compteur </div>
+  <div [style]="'font-size:' + counter + 'px'"> {{ counter }} </div>
+  <div> </div>
 </div>

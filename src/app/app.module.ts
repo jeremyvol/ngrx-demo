@@ -11,8 +11,14 @@ import { Comp1Component } from './comp1/comp1.component';
 import { Comp2Component } from './comp2/comp2.component';
 import { Comp3Component } from './comp3/comp3.component';
 
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
+
+import { FormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
@@ -22,9 +28,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     Comp3Component
   ],
   imports: [
+    MatButtonModule,
+    MatIconModule,
     MatInputModule,
     MatToolbarModule,
+
     BrowserModule,
+    FormsModule,
     BrowserAnimationsModule,
     StoreModule.forRoot(reducers)
   ],

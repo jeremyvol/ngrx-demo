@@ -15,11 +15,9 @@ export class Comp2Component implements OnInit {
   constructor(private store: Store<fromRoot.State>) { }
 
   ngOnInit(): void {
-    // this.store.select(fromRoot.counterSelector).subscribe(state => {
-    //   console.log("🚀 ~ file: comp2.component.ts ~ line 19 ~ Comp2Component ~ this.store.select ~ state", state);
-
-    //   // this.counter = counter;
-    // });
+    this.store.select(fromRoot.getCounter).subscribe(counter => {
+      this.counter = counter;
+    });
   }
 
 }

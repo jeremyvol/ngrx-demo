@@ -10,8 +10,8 @@ import * as fromRoot from '../store/app.reducer';
 })
 export class Comp3Component implements OnInit {
 
-  firstname: String = '';
-  lastname: String = '';
+  firstname = '';
+  lastname = '';
 
   constructor(private store: Store<fromRoot.State>) { }
 
@@ -23,10 +23,8 @@ export class Comp3Component implements OnInit {
       this.lastname = lastname;
     });
 
-    this.store.select(fromRoot.getUserState).subscribe(state => {
-      console.log("🚀 ~ file: comp3.component.ts ~ line 27 ~ Comp3Component ~ this.store.select ~ state", state);
-    });
-
+    // this.store.select(fromRoot.getUserState).subscribe(state => {
+    //   console.log("🚀 ~ file: comp3.component.ts ~ line 27 ~ Comp3Component ~ this.store.select ~ state", state);
+    // });
   }
-
 }

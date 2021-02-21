@@ -1,14 +1,17 @@
 import {
   UserActions,
   SET_FIRSTNAME,
-  SET_LASTNAME
+  SET_LASTNAME,
+  SET_USER
 } from './user.actions';
 
 ///////////////////////////////////////////////////////////////////////////////
+//              Etape 1 : creation de la tranche de state                    //
+///////////////////////////////////////////////////////////////////////////////
 
 export interface UserState {
-  firstname: String;
-  lastname: String;
+  firstname: string;
+  lastname: string;
 }
 
 export const initialState: UserState = {
@@ -17,6 +20,8 @@ export const initialState: UserState = {
 };
 
 ///////////////////////////////////////////////////////////////////////////////
+//              Etape 3 : reducer de la tranche                              //
+///////////////////////////////////////////////////////////////////////////////
 
 export function userReducer(
   state = initialState,
@@ -24,6 +29,7 @@ export function userReducer(
 ) {
   switch (action.type) {
     case SET_FIRSTNAME:
+      console.log("🚀 ~ file: user.reducer.ts ~ line 38 ~ action.payload", action.payload);
       return {
         ...state,
         firstname: action.payload
@@ -33,6 +39,11 @@ export function userReducer(
         ...state,
         lastname: action.payload
       };
+    case SET_USER:
+      return {
+        firstname: action.payload.firstname,
+        lastname: action.payload.lastname
+      };
     default:
       return state;
   }
@@ -40,3 +51,5 @@ export function userReducer(
 
 export const getFirstname = (state: UserState) => state.firstname;
 export const getLastname = (state: UserState) => state.lastname;
+
+// export const getUser = (state: UserState) => ({ ...state });
