@@ -29,7 +29,6 @@ export function userReducer(
 ) {
   switch (action.type) {
     case SET_FIRSTNAME:
-      console.log("🚀 ~ file: user.reducer.ts ~ line 38 ~ action.payload", action.payload);
       return {
         ...state,
         firstname: action.payload
@@ -41,6 +40,7 @@ export function userReducer(
       };
     case SET_USER:
       return {
+        ...state,
         firstname: action.payload.firstname,
         lastname: action.payload.lastname
       };
